@@ -1,5 +1,5 @@
 //
-//  ColorTheme.swift
+//  ColorSet.swift
 //  QuillStroke
 //
 //  Created by Saverio Negro on 9/27/26.
@@ -8,11 +8,23 @@
 import SwiftUI
 
 struct ColorSet {
-    var accent: Color
-    var secondary: Color
-    var background: Color
-    var text: Color
     
+    var themeState: ColorThemeState
     
+    var accent: Color {
+        return themeState.accent
+    }
+    
+    var secondary: Color {
+        return themeState.secondary
+    }
+    
+    var background: Color {
+        return themeState.background
+    }
+    
+    var text: Color {
+        return themeState.text
+    }
 }
 
