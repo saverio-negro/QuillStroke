@@ -8,9 +8,6 @@
 import SwiftUI
 
 protocol ColorThemeState {
-    var accent: Color { get }
-    var secondary: Color { get }
-    var background: Color { get }
-    var text: Color { get }
+    func applyTheme()
 }
 

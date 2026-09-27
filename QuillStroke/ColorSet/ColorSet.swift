@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-struct ColorSet {
+// Use State Pattern to change behavior (color properties) of `ColorSet` depending on its current state (`ColorThemeState`)
+class ColorSet {
+    var themeState: ColorThemeState? = nil
+    var accent: Color? = nil
+    var secondary: Color? = nil
+    var background: Color? = nil
+    var text: Color? = nil
     
-    var themeState: ColorThemeState
-    
-    var accent: Color {
-        return themeState.accent
+    init() {
+        self.themeState = MainTheme(colorSet: self)
     }
     
-    var secondary: Color {
-        return themeState.secondary
+    func applyTheme() {
+        self.themeState?.applyTheme()
     }
     
-    var background: Color {
-        return themeState.background
-    }
-    
-    var text: Color {
-        return themeState.text
+    func setThemeState(themeState: ColorThemeState) {
+        self.themeState = themeState
     }
 }
 
