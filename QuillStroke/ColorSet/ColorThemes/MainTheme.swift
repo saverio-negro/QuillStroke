@@ -11,10 +11,10 @@ struct MainTheme: ColorThemeState {
     var colorSet: ColorSet
     
     func applyTheme() {
-        colorSet.accent = Color(red: 42, green: 131, blue: 95)
-        colorSet.secondary = Color(red: 18, green: 84, blue: 79)
-        colorSet.background = Color(red: 9, green: 35, blue: 40)
-        colorSet.text = Color(red: 139, green: 187, blue: 146)
+        colorSet.accent = Color(red: 0.165, green: 0.514, blue: 0.373)
+        colorSet.secondary = Color(red: 0.071, green: 0.329, blue: 0.310)
+        colorSet.background = Color(red: 0.035, green: 0.137, blue: 0.157)
+        colorSet.text = Color(red: 0.545, green: 0.733, blue: 0.573)
     }
 }
 
