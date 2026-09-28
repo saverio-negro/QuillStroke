@@ -20,7 +20,7 @@ class BookNetworkService: BookService {
             URLQueryItem(name: "limit", value: String(limit))
         ]
         
-        if let searchText, !searchText.isEmpty {
+        if let searchText = searchText, !searchText.isEmpty {
             queryItems.append(URLQueryItem(name: "search_text", value: searchText))
         }
         
@@ -65,9 +65,9 @@ class BookNetworkService: BookService {
         return newBook
     }
     
-    func updateBook(_ book: BookUpdate) async throws -> Book {
+    func updateBook(id: Int, _ book: BookUpdate) async throws -> Book {
         // Create a URLRequest object to configure the request
-        var request = URLRequest(url: URL(string: baseURL)!)
+        var request = URLRequest(url: URL(string: "\(baseURL)/\(id)")!)
         
         // Set the HTTP request method to be a PUT method
         request.httpMethod = "PUT"
@@ -93,7 +93,7 @@ class BookNetworkService: BookService {
     
     func deleteBook(id: Int) async throws {
         // Create a URLRequest object to configure the request
-        var request = URLRequest(url: URL(string: baseURL)!)
+        var request = URLRequest(url: URL(string: "\(baseURL)/\(id)")!)
         
         // Set the HTTP request method to be a DELETE method
         request.httpMethod = "DELETE"
